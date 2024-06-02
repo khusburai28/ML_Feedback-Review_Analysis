@@ -6,7 +6,6 @@ import nltk
 from string import punctuation
 import re
 from nltk.corpus import stopwords
-import pyttsx3
 
 # Download stopwords if not already downloaded
 nltk.download('stopwords')
@@ -14,8 +13,6 @@ nltk.download('stopwords')
 # Ensure stopwords are available
 stop_words = set(stopwords.words('english'))
 
-# Initialize the text-to-speech engine
-engine = pyttsx3.init()
 
 # Function to process text and perform sentiment analysis
 def process_text(text):
@@ -59,7 +56,6 @@ if st.button("Analyze"):
     st.write(f"Neutral: {scores['neu']*100}%")
     st.write(f"Compound: {compound*100}%")
 
-    if st.button("Read Sentiment"):
-        engine.say(f"The sentiment analysis result is as follows: Positive: {scores['pos']}, Negative: {scores['neg']}, Neutral: {scores['neu']}, Compound: {compound}")
-        engine.runAndWait()
+
+
 
